@@ -1,0 +1,1028 @@
+{
+  "config": {
+    "WORK": "/tmp/er_work",
+    "OUT_DIR": "/kaggle/working/output",
+    "INPUT_DIR": "",
+    "CHALLENGE_DIR": "",
+    "KAGGLE_INPUT": "/kaggle/input",
+    "FTFY": false,
+    "PLACEHOLDER_EMPTY": false,
+    "STATE_EXPAND": false,
+    "STREET_ABBREV": false,
+    "DEVA_TRANSLIT": "unidecode",
+    "SWITCHES_TRY": {
+      "FTFY": true,
+      "PLACEHOLDER_EMPTY": true,
+      "STATE_EXPAND": true,
+      "STREET_ABBREV": true,
+      "DEVA_TRANSLIT": "indic"
+    },
+    "RUN_SWITCH_GATE": false,
+    "GATE_TRAIN_QUERIES": 30000,
+    "DF_MAX_FRAC": 0.005,
+    "AUTO_DF_CAP": false,
+    "DF_CAP_CANDIDATES": [
+      0.002,
+      0.005
+    ],
+    "DF_CAP_TOLERANCE": 0.005,
+    "W_NAME": 0.5,
+    "K_MAIN": 50,
+    "K_NAME": 10,
+    "BLOCK_BATCH": 2048,
+    "N_TRAIN_QUERIES": 100000,
+    "FULL_TRAIN_QUERIES": 200000,
+    "CONTEXT_FEATURES": false,
+    "DENSITY_MATCH": true,
+    "VARIANT_THRESHOLDS": [
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ],
+    "SEED": 42,
+    "LGB_ROUNDS": 1000,
+    "THR_GRID": [
+      0.1,
+      0.125,
+      0.15,
+      0.175,
+      0.2,
+      0.225,
+      0.25,
+      0.275,
+      0.3,
+      0.325,
+      0.35,
+      0.375,
+      0.4,
+      0.425,
+      0.45,
+      0.475,
+      0.5,
+      0.525,
+      0.55,
+      0.575,
+      0.6,
+      0.625,
+      0.65,
+      0.675,
+      0.7,
+      0.725,
+      0.75,
+      0.775,
+      0.8,
+      0.825,
+      0.85,
+      0.875,
+      0.9,
+      0.925,
+      0.95
+    ],
+    "MAX_PRED": 15,
+    "P_FLOOR": 0.05,
+    "TEST_WEIGHTS": "auto",
+    "TEST_QUERY_BATCH": 20000,
+    "RUN_HOLDOUT": true,
+    "KNOWN_GATE": [
+      {
+        "rule": "baseline (plan conservative settings)",
+        "F05_testmix": 0.9687,
+        "delta": 0.0,
+        "se": 0.0,
+        "recall": 0.969,
+        "adopted": "-"
+      },
+      {
+        "rule": "FTFY=True",
+        "F05_testmix": 0.9687,
+        "delta": 0.0,
+        "se": 0.0003,
+        "recall": 0.969,
+        "adopted": "no"
+      },
+      {
+        "rule": "PLACEHOLDER_EMPTY=True",
+        "F05_testmix": 0.9687,
+        "delta": 0.0,
+        "se": 0.0,
+        "recall": 0.969,
+        "adopted": "no"
+      },
+      {
+        "rule": "STATE_EXPAND=True",
+        "F05_testmix": 0.9689,
+        "delta": 0.0002,
+        "se": 0.0004,
+        "recall": 0.9688,
+        "adopted": "no"
+      },
+      {
+        "rule": "STREET_ABBREV=True",
+        "F05_testmix": 0.9683,
+        "delta": -0.0004,
+        "se": 0.0004,
+        "recall": 0.9692,
+        "adopted": "no"
+      },
+      {
+        "rule": "DEVA_TRANSLIT=indic",
+        "F05_testmix": 0.9693,
+        "delta": 0.0006,
+        "se": 0.0004,
+        "recall": 0.9699,
+        "adopted": "no"
+      }
+    ]
+  },
+  "switch_gate": [
+    {
+      "rule": "baseline (plan conservative settings)",
+      "F05_testmix": 0.9687,
+      "delta": 0.0,
+      "se": 0.0,
+      "recall": 0.969,
+      "adopted": "-",
+      "note": "from run v2 (real data)"
+    },
+    {
+      "rule": "FTFY=True",
+      "F05_testmix": 0.9687,
+      "delta": 0.0,
+      "se": 0.0003,
+      "recall": 0.969,
+      "adopted": "no",
+      "note": "from run v2 (real data)"
+    },
+    {
+      "rule": "PLACEHOLDER_EMPTY=True",
+      "F05_testmix": 0.9687,
+      "delta": 0.0,
+      "se": 0.0,
+      "recall": 0.969,
+      "adopted": "no",
+      "note": "from run v2 (real data)"
+    },
+    {
+      "rule": "STATE_EXPAND=True",
+      "F05_testmix": 0.9689,
+      "delta": 0.0002,
+      "se": 0.0004,
+      "recall": 0.9688,
+      "adopted": "no",
+      "note": "from run v2 (real data)"
+    },
+    {
+      "rule": "STREET_ABBREV=True",
+      "F05_testmix": 0.9683,
+      "delta": -0.0004,
+      "se": 0.0004,
+      "recall": 0.9692,
+      "adopted": "no",
+      "note": "from run v2 (real data)"
+    },
+    {
+      "rule": "DEVA_TRANSLIT=indic",
+      "F05_testmix": 0.9693,
+      "delta": 0.0006,
+      "se": 0.0004,
+      "recall": 0.9699,
+      "adopted": "no",
+      "note": "from run v2 (real data)"
+    }
+  ],
+  "phaseA": {
+    "metrics": {
+      "F05": 0.9761629805686142,
+      "n": 20000,
+      "F05_India": 0.9663361876582491,
+      "F05_US": 0.9827196369919688,
+      "F05_testmix": 0.9761629805686142,
+      "mean_P": 0.9880259097584204,
+      "mean_R": 0.9513105766587734,
+      "singleton_acc": 0.9704565801253358,
+      "pred_per_S1": 3.3189
+    },
+    "threshold": 0.7,
+    "blocking": {
+      "true_pairs": 69300,
+      "cand_pairs": 1017816,
+      "cand_per_S1": 50.9,
+      "recall_main@10": 0.947,
+      "recall_main@20": 0.9594,
+      "recall_main@30": 0.9641,
+      "recall_main@50": 0.9688,
+      "recall_union": 0.969,
+      "name_channel_only_hits": 15,
+      "S1_all_found": 0.9098,
+      "ceiling_F05": 0.9882
+    },
+    "no_resolution": {
+      "F05": 0.9759330087189985,
+      "n": 20000,
+      "F05_India": 0.9660682120716969,
+      "F05_US": 0.9825150220872045,
+      "F05_testmix": 0.9759330087189985,
+      "mean_P": 0.9877352729296276,
+      "mean_R": 0.9513282292210428,
+      "singleton_acc": 0.9704565801253358,
+      "pred_per_S1": 3.32015
+    },
+    "pool_stats": {
+      "India": {
+        "pool": 412255,
+        "name_vocab": 89868,
+        "addr_vocab": 123788,
+        "nnz": 2393401,
+        "secs": 6.9
+      },
+      "US": {
+        "pool": 616485,
+        "name_vocab": 148023,
+        "addr_vocab": 115422,
+        "nnz": 3328655,
+        "secs": 8.1
+      }
+    },
+    "importance": {
+      "blk": 4596083.0,
+      "rank": 3588434.0,
+      "a_tset": 1074049.0,
+      "n_core_partial": 439825.0,
+      "num_tset": 318545.0,
+      "a_plain_tset": 312061.0,
+      "n_latin_ratio": 195697.0,
+      "acos": 150635.0,
+      "n_compact_ratio": 99062.0,
+      "c_ntok": 76788.0,
+      "n_core_tsort": 61179.0,
+      "n_latin_tset": 58577.0,
+      "n_core_jw": 57847.0,
+      "a_ratio": 53749.0,
+      "a_partial": 50988.0,
+      "n_compact_partial": 50963.0,
+      "n_light_ratio": 47947.0,
+      "hn_absdiff": 36994.0,
+      "blk_rel": 34548.0,
+      "num_exact": 32136.0,
+      "addr_gap": 31731.0,
+      "ncos": 26971.0,
+      "n_core_ratio": 22569.0,
+      "len_ratio": 21524.0,
+      "legal_conflict": 17493.0,
+      "hn_eq": 16724.0,
+      "hn_reldiff": 13837.0,
+      "legal_same": 13338.0,
+      "blk_gap": 12816.0,
+      "q_ncomp": 12488.0,
+      "c_ncomp": 9169.0,
+      "n_core_tset": 8867.0,
+      "hn_lev": 8637.0,
+      "in_name": 8397.0,
+      "hn_trunc": 6739.0,
+      "q_ntok": 6603.0,
+      "name_gap": 6429.0,
+      "init_match": 5358.0,
+      "c_has_num": 5293.0,
+      "n_first_eq": 4803.0,
+      "is_s3": 4400.0,
+      "n_cand": 3460.0,
+      "c_deva": 1385.0,
+      "q_has_num": 849.0,
+      "unit_eq": 495.0,
+      "unit_conflict": 282.0,
+      "cross_script": 276.0,
+      "hn_both": 174.0,
+      "postal_conflict": 136.0,
+      "postal_eq": 70.0,
+      "alias_best": 33.0,
+      "n_core_exact": 2.0,
+      "q_deva": 0.0,
+      "c_addr_missing": 0.0,
+      "c_fixed": 0.0
+    },
+    "examples": {
+      "false_merges": [
+        {
+          "p": 0.995,
+          "S1": [
+            "Camacho Aurora Partners",
+            "9012 Breezewood Terrace, Unit 201, Greenbelt, MD"
+          ],
+          "cand": [
+            "Camach0 Aurora Pártners Ltd",
+            "MD, GREENBELT, 9012 BREEZEWOOD TERRACE"
+          ],
+          "rank": 1
+        },
+        {
+          "p": 0.979,
+          "S1": [
+            "Maa Solutions Pvt Ltd",
+            "Uttar Pradesh, Gyan Bhawan8 Kapoor Thala Road Aliganj Lucknow, Lucknow"
+          ],
+          "cand": [
+            "मां सॉल्यूशंस जनरल प्रा. लि.",
+            "GYAN BHAWAN12 KAPOOR THALA ROAD ALIGANJ LUCKNOW, UTTAR PRADESH, LUCKNOW, उत्तर प्रदेश"
+          ],
+          "rank": 3
+        },
+        {
+          "p": 0.974,
+          "S1": [
+            "Parmarth Enterprises (India)",
+            "Door No 50-81-24/2, Flat No .502 Gvk Plaza, Seethampeta, Near Gurudwara Junction, Visakhapatnam (Urban), Visakhapatnam, Vishakhapatnam, Andhra Pradesh"
+          ],
+          "cand": [
+            "Parmarth Enterprises (India) Private Limited",
+            "Door No 50-81-24/9, Vishakapattanam, Vishakhapatnam, AP"
+          ],
+          "rank": 4
+        },
+        {
+          "p": 0.936,
+          "S1": [
+            "DS Nexpoint P.C.",
+            "12839 Ruby Road, Farmington, AR"
+          ],
+          "cand": [
+            "DS  Nexpoint",
+            ""
+          ],
+          "rank": 4
+        },
+        {
+          "p": 0.989,
+          "S1": [
+            "Classic Consultants Private Limited",
+            "Survey No:389/1, Padasalai Street, Poonamallee, Tiruvallur, Tamil Nadu"
+          ],
+          "cand": [
+            "PVT CLASSIC INTERNATIONAL LIMITED",
+            "NO 1, POONAMALLEE, TIRUVALLUR, Tamil Nadu"
+          ],
+          "rank": 0
+        },
+        {
+          "p": 0.932,
+          "S1": [
+            "Sree Infra Limited",
+            "Shop No.S102, No.769, Spencer Plaza, Anna Salai, Chennai, Tamil Nadu"
+          ],
+          "cand": [
+            "Sree Infra Electronics லிமிடெட்",
+            "No. 647 Shop No.s105, No.769, Spencer Plaza, Anna Salai, Chennai, Tiruverkadu, TN"
+          ],
+          "rank": 4
+        },
+        {
+          "p": 0.89,
+          "S1": [
+            "Surya Projects",
+            "8, I Floor, Kasi Arcade116 Sir Theagaraya Road T. Nagar, Madras-600 017, Chennai, Tamil Nadu"
+          ],
+          "cand": [
+            "Surya  Builders",
+            "Chennai, Chennai - 600 017., TN, 19/23"
+          ],
+          "rank": 2
+        },
+        {
+          "p": 0.765,
+          "S1": [
+            "Heritage Center, LLC",
+            "2657 18 Street, Brooklyn, NY"
+          ],
+          "cand": [
+            "ONYXKOR CENTER, LLC",
+            "2657 18 ST, BROOKLYN CITY, NY"
+          ],
+          "rank": 5
+        }
+      ],
+      "missed": [
+        {
+          "p": 0.2,
+          "S1": [
+            "Happy Tavern",
+            "1320 Windridge Road, Friendsville, TN"
+          ],
+          "cand": [
+            "Happy Tavern Corporation",
+            ""
+          ],
+          "rank": 16
+        },
+        {
+          "p": 0.383,
+          "S1": [
+            "South Rockwool",
+            "1130 Hunting Court, IL, Palatine"
+          ],
+          "cand": [
+            "SOUTH ROCKWOOL",
+            ""
+          ],
+          "rank": 13
+        },
+        {
+          "p": 0.532,
+          "S1": [
+            "Oxley Uranium Partners",
+            "VT, 13 Country Club Estates, Swanton"
+          ],
+          "cand": [
+            "Oxley Uranium Partners",
+            ""
+          ],
+          "rank": 9
+        },
+        {
+          "p": 0.071,
+          "S1": [
+            "Rev It Up Bakery LLC",
+            "801 Parkview Street, Jonesboro, AR"
+          ],
+          "cand": [
+            "Rev It Up Bakery LLC Service",
+            "802 Parkview Street, Jonesboro, Arkansas"
+          ],
+          "rank": 3
+        },
+        {
+          "p": 0.524,
+          "S1": [
+            "Keystone Environmental Consultants, LLC",
+            "200 54, Unit 105, Carrboro, NC"
+          ],
+          "cand": [
+            "consultantskeystoneenvironmental.com",
+            "North Carolina, 200 54, PMB 1394, Carrboro"
+          ],
+          "rank": 6
+        },
+        {
+          "p": 0.583,
+          "S1": [
+            "QO Polymers Private Limited",
+            "A 78 Ff J P Garden, Ghaziabad, Uttar Pradesh"
+          ],
+          "cand": [
+            "QO Private Limited Partners Enterprises",
+            ""
+          ],
+          "rank": 1
+        },
+        {
+          "p": 0.351,
+          "S1": [
+            "Hedgesville Internal Medicine Health",
+            "36 Spies Drive, Hedgesville, WV"
+          ],
+          "cand": [
+            "Hedgesville Internal Medicine Health (Inc.)",
+            ""
+          ],
+          "rank": 10
+        },
+        {
+          "p": 0.578,
+          "S1": [
+            "South Safe Xflh Inc",
+            "1400 Hartford Avenue, Unit Apt A4, Russellville, AR"
+          ],
+          "cand": [
+            "South Safe Xflh",
+            ""
+          ],
+          "rank": 13
+        }
+      ]
+    },
+    "minutes": 7.2,
+    "loco": {
+      "US->India": {
+        "thr": 0.7,
+        "F05_target": 0.9260597566849311,
+        "F05_target_in_country_model": 0.9663361876582491
+      },
+      "India->US": {
+        "thr": 0.7,
+        "F05_target": 0.9690524487623718,
+        "F05_target_in_country_model": 0.9827196369919688
+      }
+    }
+  },
+  "countries": {
+    "train_S1": {
+      "US": 1323633,
+      "India": 883188
+    },
+    "test_S1": {
+      "India": 809986,
+      "US": 663106,
+      "France": 259452
+    },
+    "weights": {
+      "India": 0.5499,
+      "US": 0.4501
+    }
+  },
+  "density_match": [
+    {
+      "country": "India",
+      "train_density": 4.68,
+      "test_density": 5.824,
+      "sampled_fraction": 0.214,
+      "added": 1010506
+    },
+    {
+      "country": "US",
+      "train_density": 4.674,
+      "test_density": 5.756,
+      "sampled_fraction": 0.375,
+      "added": 1432832
+    }
+  ],
+  "phaseB": {
+    "metrics": {
+      "F05": 0.9525109404280245,
+      "n": 20000,
+      "F05_India": 0.9345784657849403,
+      "F05_US": 0.9644758893312626,
+      "F05_testmix": 0.9480352961231401,
+      "mean_P": 0.9784383408608902,
+      "mean_R": 0.8981296460722398,
+      "singleton_acc": 0.9427036705461056,
+      "pred_per_S1": 3.1453
+    },
+    "threshold": 0.75,
+    "blocking": {
+      "true_pairs": 69300,
+      "cand_pairs": 1058572,
+      "cand_per_S1": 52.9,
+      "recall_main@10": 0.9007,
+      "recall_main@20": 0.9223,
+      "recall_main@30": 0.9308,
+      "recall_main@50": 0.9395,
+      "recall_union": 0.9405,
+      "name_channel_only_hits": 69,
+      "S1_all_found": 0.8306,
+      "ceiling_F05": 0.9771
+    },
+    "no_resolution": {
+      "F05": 0.9525040438763004,
+      "n": 20000,
+      "F05_India": 0.9345612330220116,
+      "F05_US": 0.9644758893312626,
+      "F05_testmix": 0.9480258198268056,
+      "mean_P": 0.9784295145797557,
+      "mean_R": 0.8981296460722398,
+      "singleton_acc": 0.9427036705461056,
+      "pred_per_S1": 3.14535
+    },
+    "pool_stats": {
+      "India": {
+        "pool": 5143852,
+        "name_vocab": 615362,
+        "addr_vocab": 553132,
+        "nnz": 29911670,
+        "secs": 80.3
+      },
+      "US": {
+        "pool": 7619705,
+        "name_vocab": 1138623,
+        "addr_vocab": 398700,
+        "nnz": 41243661,
+        "secs": 104.3
+      }
+    },
+    "holdout": {
+      "F05": 0.954099138646428,
+      "n": 20000,
+      "F05_India": 0.9330712935581743,
+      "F05_US": 0.9681235440803508,
+      "F05_testmix": 0.948848311518206,
+      "mean_P": 0.9798476537004516,
+      "mean_R": 0.8977348023779245,
+      "singleton_acc": 0.9565602836879432,
+      "pred_per_S1": 3.1414,
+      "blocking": {
+        "true_pairs": 69362,
+        "cand_pairs": 1058855,
+        "cand_per_S1": 52.9,
+        "recall_main@10": 0.9,
+        "recall_main@20": 0.9212,
+        "recall_main@30": 0.9305,
+        "recall_main@50": 0.9387,
+        "recall_union": 0.9397,
+        "name_channel_only_hits": 72,
+        "S1_all_found": 0.8276,
+        "ceiling_F05": 0.9777
+      },
+      "threshold_curve": [
+        {
+          "thr": 0.7,
+          "F05": 0.9541,
+          "F05_India": 0.933,
+          "F05_US": 0.9682,
+          "F05_testmix": 0.9488,
+          "mean_P": 0.9787,
+          "mean_R": 0.9023,
+          "singleton_acc": 0.9495,
+          "pred_per_S1": 3.1643
+        },
+        {
+          "thr": 0.75,
+          "F05": 0.9541,
+          "F05_India": 0.9331,
+          "F05_US": 0.9681,
+          "F05_testmix": 0.9488,
+          "mean_P": 0.9798,
+          "mean_R": 0.8977,
+          "singleton_acc": 0.9566,
+          "pred_per_S1": 3.1414
+        },
+        {
+          "thr": 0.8,
+          "F05": 0.9534,
+          "F05_India": 0.9327,
+          "F05_US": 0.9672,
+          "F05_testmix": 0.9482,
+          "mean_P": 0.9806,
+          "mean_R": 0.8913,
+          "singleton_acc": 0.9672,
+          "pred_per_S1": 3.1126
+        },
+        {
+          "thr": 0.85,
+          "F05": 0.952,
+          "F05_India": 0.9305,
+          "F05_US": 0.9664,
+          "F05_testmix": 0.9466,
+          "mean_P": 0.9809,
+          "mean_R": 0.8833,
+          "singleton_acc": 0.977,
+          "pred_per_S1": 3.0784
+        },
+        {
+          "thr": 0.9,
+          "F05": 0.949,
+          "F05_India": 0.9263,
+          "F05_US": 0.9642,
+          "F05_testmix": 0.9433,
+          "mean_P": 0.9809,
+          "mean_R": 0.8716,
+          "singleton_acc": 0.9858,
+          "pred_per_S1": 3.0309
+        }
+      ]
+    },
+    "importance": {
+      "rank": 12645411.0,
+      "num_tset": 2539577.0,
+      "n_compact_ratio": 1107354.0,
+      "blk": 971060.0,
+      "a_tset": 888223.0,
+      "n_latin_ratio": 629694.0,
+      "n_core_partial": 470606.0,
+      "addr_gap": 379613.0,
+      "a_plain_tset": 289872.0,
+      "n_latin_tset": 200486.0,
+      "c_ntok": 195507.0,
+      "hn_absdiff": 188825.0,
+      "n_light_ratio": 171511.0,
+      "n_compact_partial": 161398.0,
+      "n_core_tsort": 152127.0,
+      "hn_eq": 150985.0,
+      "a_partial": 124430.0,
+      "n_core_ratio": 121138.0,
+      "hn_trunc": 104369.0,
+      "ncos": 101825.0,
+      "acos": 99203.0,
+      "blk_rel": 97570.0,
+      "len_ratio": 90064.0,
+      "n_core_jw": 88488.0,
+      "num_exact": 85444.0,
+      "legal_conflict": 85181.0,
+      "hn_reldiff": 59887.0,
+      "blk_gap": 51689.0,
+      "q_ncomp": 49392.0,
+      "c_has_num": 49297.0,
+      "legal_same": 48459.0,
+      "hn_lev": 47833.0,
+      "a_ratio": 41633.0,
+      "n_core_tset": 39507.0,
+      "n_first_eq": 34839.0,
+      "c_ncomp": 34759.0,
+      "q_ntok": 30717.0,
+      "n_cand": 26672.0,
+      "init_match": 24485.0,
+      "name_gap": 22654.0,
+      "in_name": 15017.0,
+      "is_s3": 11531.0,
+      "q_has_num": 7406.0,
+      "c_deva": 5628.0,
+      "unit_eq": 3000.0,
+      "unit_conflict": 1307.0,
+      "postal_conflict": 1174.0,
+      "hn_both": 1165.0,
+      "cross_script": 1074.0,
+      "postal_eq": 287.0,
+      "alias_best": 259.0,
+      "n_core_exact": 11.0,
+      "q_deva": 0.0,
+      "c_addr_missing": 0.0,
+      "c_fixed": 0.0
+    },
+    "examples": {
+      "false_merges": [
+        {
+          "p": 0.8,
+          "S1": [
+            "The Dent Diner",
+            "6011 Lakeview Drive, Hubbard, OH"
+          ],
+          "cand": [
+            "The Dent",
+            "Hoodview Drive, Hubbard, Oregon"
+          ],
+          "rank": 5
+        },
+        {
+          "p": 0.919,
+          "S1": [
+            "Warsi Advisors",
+            "Andipalayam Village & Post, Tiruchengode, Namakkal, No.1/374-A1, Tamil Nadu, Namakkal"
+          ],
+          "cand": [
+            "Warsi Advisors Private Limited",
+            "NO.6-1/374-A8 , ANDIPALAYAM VILLAGE & POST, TIRUCHENGODE, NAMAKKAL, Tamil Nadu"
+          ],
+          "rank": 1
+        },
+        {
+          "p": 0.965,
+          "S1": [
+            "First Consulting Private Limited",
+            "J.K.Tower, B Wing, Flat No.103, J.P.Nagar Sector 7, Evershine City Vasai Road(East), Vasai, Thane, Maharashtra"
+          ],
+          "cand": [
+            "तिरुपति कंसल्टिंग प्राइवेट लिमिटेड",
+            "Maharashtra, THANE, D-B3/103, VASAI"
+          ],
+          "rank": 30
+        },
+        {
+          "p": 0.825,
+          "S1": [
+            "Swastik Energy Private Limited",
+            "G-01, Plot-204, Shree Nagar Main, Indore, Indore, Madhya Pradesh"
+          ],
+          "cand": [
+            "Swastik केयर प्राइवेट लिमिटेड",
+            "G-2, Plot-204, Shree Nagar Main, Indore, Indore, MP"
+          ],
+          "rank": 1
+        },
+        {
+          "p": 0.992,
+          "S1": [
+            "North Systems Private Limited",
+            "Shagun Palace Third Floor, Office No.4 Sapru Marg, Hazratganj, Lucknow, Uttar Pradesh"
+          ],
+          "cand": [
+            "नॉर्थ एक्सपोर्ट्स प्राइवेट लिमिटेड",
+            "H.NO 053 SHAGUN PALACE THIRD FLOOR, OFFICE NO.4 SAPRU MARG, HAZRATGANJ, LUCKNOW, Uttar Pradesh"
+          ],
+          "rank": 4
+        },
+        {
+          "p": 0.82,
+          "S1": [
+            "Cost Brothers Private Limited",
+            "Delhi, Sushila Mohan Marg Naya Bazar, Chandni Chowk, 1723, Delhi, New Delhi"
+          ],
+          "cand": [
+            "Cost Brothers Private Ltd",
+            ""
+          ],
+          "rank": 11
+        },
+        {
+          "p": 0.891,
+          "S1": [
+            "Saideva Trust",
+            "Ergo Tower, Unit No.903, Plot No.A1-4 Block Ep & Gp, Sector-V, Salt Lake, Kolkata, Parganas North, West Bengal"
+          ],
+          "cand": [
+            "LIMITED SAIDEVA TRUST",
+            "No 18 Ergo Tower, Kolkata, Parganas North, WB"
+          ],
+          "rank": 3
+        },
+        {
+          "p": 0.861,
+          "S1": [
+            "Clyeus Consumer Care",
+            "15 Meteor Court, Parkville, MD"
+          ],
+          "cand": [
+            "Clyeus Consumer",
+            ""
+          ],
+          "rank": 3
+        }
+      ],
+      "missed": [
+        {
+          "p": 0.23,
+          "S1": [
+            "Internal Medicine Integrated Clinic Corp",
+            "1809 John Muir Circle, Salem, OR"
+          ],
+          "cand": [
+            "Zéphriza",
+            "SALEM, JOHN MUIR CIRCLE, OR"
+          ],
+          "rank": 4
+        },
+        {
+          "p": 0.166,
+          "S1": [
+            "Express Consumer Union LLC",
+            "2800 High Street, Springfield, OH"
+          ],
+          "cand": [
+            "EXPRESS CONSUMER LLC CENTER",
+            ""
+          ],
+          "rank": 20
+        },
+        {
+          "p": 0.683,
+          "S1": [
+            "Osprey LLC",
+            "3221 Swann Road, Unit 104, Suitland, MD"
+          ],
+          "cand": [
+            "L.L.C. Osprey",
+            "3221 Swann Road, PO Box 7903, Maryland, Suitalnd"
+          ],
+          "rank": 3
+        },
+        {
+          "p": 0.487,
+          "S1": [
+            "Robbins and Dumas",
+            "14 Sequams Lane, Islip, NY"
+          ],
+          "cand": [
+            "ROBBIN & DUMAS",
+            "14-16 SEQUAMS LN, NY, ISLIP"
+          ],
+          "rank": 1
+        },
+        {
+          "p": 0.559,
+          "S1": [
+            "Wang, Kucinski & White Inc",
+            "Anoka, MN, 551 Polk Street"
+          ],
+          "cand": [
+            "Wang, Kucinski White Inc Partners",
+            ""
+          ],
+          "rank": 7
+        },
+        {
+          "p": 0.327,
+          "S1": [
+            "Vardhaman Constructions",
+            "Main Ajit Road Opposite 12 Near Dhillon Hospital, Bathinda, Punjab"
+          ],
+          "cand": [
+            "Vardhaman  Constructions",
+            ""
+          ],
+          "rank": 25
+        },
+        {
+          "p": 0.094,
+          "S1": [
+            "Express Wellness Studios",
+            "623 Otter Way, Oswego, IL"
+          ],
+          "cand": [
+            "EXPRESS-WELLNESS",
+            ""
+          ],
+          "rank": 34
+        },
+        {
+          "p": 0.456,
+          "S1": [
+            "Ewell, Sheila, DO",
+            "148 C Street, Galt, CA"
+          ],
+          "cand": [
+            "Ewell, Sheila, DO Corp",
+            ""
+          ],
+          "rank": 6
+        }
+      ]
+    },
+    "train_pairs": 10584961,
+    "train_positive": 651504,
+    "minutes": 33.1
+  },
+  "test": {
+    "S1": 1732544,
+    "candidate_rows": 1732544,
+    "candidate_pairs": 92099160,
+    "threshold": 0.75,
+    "matched_pairs": 5342337,
+    "S1_with_matches": 1611313,
+    "pred_per_S1": 3.0835,
+    "empty_share": 0.07,
+    "pred_per_S1_France": 2.8992,
+    "pred_per_S1_India": 3.036,
+    "pred_per_S1_US": 3.2137,
+    "per_country": {
+      "France": {
+        "S1": 259452,
+        "pool": 1434993,
+        "cand_pairs": 14018032,
+        "minutes": 15.3
+      },
+      "India": {
+        "S1": 809986,
+        "pool": 4717565,
+        "cand_pairs": 44014968,
+        "minutes": 71.5
+      },
+      "US": {
+        "S1": 663106,
+        "pool": 3817031,
+        "cand_pairs": 34066160,
+        "minutes": 50.3
+      }
+    },
+    "minutes": 141.8
+  },
+  "variants": [
+    {
+      "thr": 0.7,
+      "matched_pairs": 5384830,
+      "S1_with_matches": 1613102,
+      "pred_per_S1": 3.108,
+      "empty_share": 0.0689,
+      "pred_per_S1_France": 2.9142,
+      "pred_per_S1_India": 3.0668,
+      "pred_per_S1_US": 3.2342
+    },
+    {
+      "thr": 0.75,
+      "matched_pairs": 5342337,
+      "S1_with_matches": 1611313,
+      "pred_per_S1": 3.0835,
+      "empty_share": 0.07,
+      "pred_per_S1_France": 2.8992,
+      "pred_per_S1_India": 3.036,
+      "pred_per_S1_US": 3.2137
+    },
+    {
+      "thr": 0.8,
+      "matched_pairs": 5291463,
+      "S1_with_matches": 1609163,
+      "pred_per_S1": 3.0542,
+      "empty_share": 0.0712,
+      "pred_per_S1_France": 2.8811,
+      "pred_per_S1_India": 2.9993,
+      "pred_per_S1_US": 3.1889
+    },
+    {
+      "thr": 0.85,
+      "matched_pairs": 5227757,
+      "S1_with_matches": 1606355,
+      "pred_per_S1": 3.0174,
+      "empty_share": 0.0728,
+      "pred_per_S1_France": 2.8587,
+      "pred_per_S1_India": 2.9535,
+      "pred_per_S1_US": 3.1575
+    },
+    {
+      "thr": 0.9,
+      "matched_pairs": 5142553,
+      "S1_with_matches": 1602180,
+      "pred_per_S1": 2.9682,
+      "empty_share": 0.0752,
+      "pred_per_S1_France": 2.8282,
+      "pred_per_S1_India": 2.8906,
+      "pred_per_S1_US": 3.1178
+    }
+  ],
+  "validator": "PASS"
+}

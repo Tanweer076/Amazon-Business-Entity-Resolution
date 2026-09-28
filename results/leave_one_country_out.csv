@@ -1,0 +1,3 @@
+direction,threshold,F05_on_target,F05_in_country_model,drop
+US->India,0.7,0.9261,0.9663,-0.0403
+India->US,0.7,0.9691,0.9827,-0.0137

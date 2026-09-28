@@ -1,0 +1,13 @@
+# CPU only; tested on Kaggle (Python 3.11) and Google Colab
+numpy
+pandas
+pyarrow
+scipy
+scikit-learn
+lightgbm
+rapidfuzz
+sparse_dot_topn>=1.0
+unidecode
+indic-transliteration
+ftfy
+gdown          # only for the Google Drive download path

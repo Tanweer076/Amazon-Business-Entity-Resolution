@@ -1,0 +1,11 @@
+# competition data and large run outputs are never committed
+data/
+dataset/
+*.tsv
+!results/*.tsv
+*.parquet
+output/
+er_work/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store

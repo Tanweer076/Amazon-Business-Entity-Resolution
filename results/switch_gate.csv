@@ -1,0 +1,7 @@
+rule,F05_testmix,delta,se,recall,adopted,note
+baseline (plan conservative settings),0.9687,0.0,0.0,0.969,-,from run v2 (real data)
+FTFY=True,0.9687,0.0,0.0003,0.969,no,from run v2 (real data)
+PLACEHOLDER_EMPTY=True,0.9687,0.0,0.0,0.969,no,from run v2 (real data)
+STATE_EXPAND=True,0.9689,0.0002,0.0004,0.9688,no,from run v2 (real data)
+STREET_ABBREV=True,0.9683,-0.0004,0.0004,0.9692,no,from run v2 (real data)
+DEVA_TRANSLIT=indic,0.9693,0.0006,0.0004,0.9699,no,from run v2 (real data)

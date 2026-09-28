@@ -1,0 +1,3 @@
+country,train_density,test_density,sampled_fraction,added
+India,4.68,5.824,0.214,1010506
+US,4.674,5.756,0.375,1432832

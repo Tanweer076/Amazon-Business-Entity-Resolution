@@ -1,0 +1,4 @@
+set,true_pairs,cand_pairs,cand_per_S1,recall_main@10,recall_main@20,recall_main@30,recall_main@50,recall_union,name_channel_only_hits,S1_all_found,ceiling_F05
+Phase A mini pool,69300,1017816,50.9,0.947,0.9594,0.9641,0.9688,0.969,15,0.9098,0.9882
+"Phase B validation, full density-matched pool",69300,1058572,52.9,0.9007,0.9223,0.9308,0.9395,0.9405,69,0.8306,0.9771
+"Phase B holdout, full density-matched pool",69362,1058855,52.9,0.9,0.9212,0.9305,0.9387,0.9397,72,0.8276,0.9777

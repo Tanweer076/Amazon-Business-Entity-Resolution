@@ -1,0 +1,4 @@
+evaluation,threshold,F05,F05_testmix,F05_India,F05_US,mean_P,mean_R,singleton_acc,pred_per_S1
+Phase A: mini-world validation (20k S1 vs mini pool),0.7,0.9762,0.9762,0.9663,0.9827,0.988,0.9513,0.9705,3.3189
+Phase B: validation (20k S1 vs full density-matched pool),0.75,0.9525,0.948,0.9346,0.9645,0.9784,0.8981,0.9427,3.1453
+Phase B: untouched holdout (20k S1 vs full density-matched pool),0.75,0.9541,0.9488,0.9331,0.9681,0.9798,0.8977,0.9566,3.1414
