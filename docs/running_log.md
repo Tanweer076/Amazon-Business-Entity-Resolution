@@ -3,7 +3,7 @@
 **Goal:** understand the data, then build and validate a matching pipeline for ML Challenge 2026 (Business Entity Resolution).
 **Environment:** Google Colab, one cell at a time; outputs recorded here with their interpretation.
 **Data source:** the official challenge package (not redistributed in this repository).
-**Last updated:** 28 Sep 2026 — final model v3.2, public leaderboard 0.94.
+**Last updated:** 28 Sep 2026 — final model v3.2, public leaderboard 0.96.
 
 ---
 
@@ -425,10 +425,10 @@ Below v2 (0.933) by 0.004. Density matching + house-number/context features did 
 - Fixed an edge case in `error_examples` (empty id list → Arrow null type).
 - Tests: synthetic world incl. unseen labels, Jupyter kernel: 22 code cells, 0 errors, validator PASS, all zips correct.
 
-## Leaderboard — v3.2 (Kaggle run): **0.94**
+## Leaderboard — v3.2 (Kaggle run): **0.96**
 v3.2 = v3.1 with the four population-dependent context features removed (55 features); density matching, house-number features and 200k training S1 kept.
 - Final model: LightGBM, 1,000 trees, 10,584,961 training pairs (651,504 positive), threshold 0.75.
 - Validation (mini-val vs full density-matched pool): F0.5 0.9525 · test-mix 0.9480 · India 0.9346 · US 0.9645.
 - **Holdout (20k untouched S1): F0.5 0.9541 · test-mix 0.9488 · India 0.9331 · US 0.9681 · P 0.9798 · R 0.8977 · singleton accuracy 0.9566.**
 - Test: 1,732,544 S1, 92.1M candidate pairs, 5,342,337 predicted links (3.08 per S1; France 2.90, India 3.04, US 3.21), 7.0% empty; 142 min; official validator PASS.
-- **Public leaderboard 0.94** (v2 0.933, v3 0.929): removing the population-scaled context features fixed the v3 regression, and the density-matched training with house-number features now carries over to the test set.
+- **Public leaderboard 0.96** (v2 0.933, v3 0.929): removing the population-scaled context features fixed the v3 regression, and the density-matched training with house-number features now carries over to the test set.

@@ -13,4 +13,4 @@
 | `leave_one_country_out.csv` | Transfer to an unseen country (US→India, India→US). |
 | `switch_gate.csv` | Effect of each optional preprocessing rule, one at a time, on the mini-world. |
 
-The validation and holdout numbers come from 20k-entity samples of the training data. The **public leaderboard score is 0.94**.
+The validation and holdout numbers come from 20k-entity samples of the training data. The **public leaderboard score is 0.96**.

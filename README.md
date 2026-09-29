@@ -2,7 +2,7 @@
 
 This pipeline matches business records across three noisy sources for **ML Challenge 2026 – Business Entity Resolution**. For every Source 1 business it finds all records in Source 2 and Source 3 that describe the same business. The records come from three countries (US, India, and France, which appears only in the test set), are written in several scripts, and are full of typos.
 
-**Public leaderboard: 0.94 macro F0.5** (final model v3.2). The Kaggle run is [here](https://www.kaggle.com/code/tanweerahmad04/notebook02e3b90c22/notebook).
+**Public leaderboard: 0.96 macro F0.5, rank 341 of 9,000+ teams** (final model v3.2). The Kaggle run is [here](https://www.kaggle.com/code/tanweerahmad04/notebook02e3b90c22/notebook).
 
 | | |
 |---|---|
@@ -113,14 +113,14 @@ The notebooks are in [`experiments/`](experiments/README.md).
 | v2 | Multi-view preprocessing, TF-IDF blocking, 49 features, LightGBM | 0.933 |
 | v3 | + density matching, house-number features, 4 name/address frequency features, 200k training entities | 0.929 |
 | v3.1 | Country treated as an open set of labels (no hard-coded US/India); same predictions as v3 | — |
-| **v3.2** | **Frequency features removed** (55 features) | **0.94** |
+| **v3.2** | **Frequency features removed** (55 features) | **0.96** |
 
 **Why v3 dropped and v3.2 recovered.** The frequency features counted how common a name or address is *per 100k records* of the population being scored. The test population is 2–5× smaller than the training population (US: 663k vs 1.32M entities), so on the test set every name looked much more common than in training. The holdout could not detect this because it comes from the training population. Removing those features kept the gains from density matching and the house-number features.
 
 ## Repository layout
 
 ```
-notebooks/er_pipeline_v3_2.ipynb   final pipeline (Colab or Kaggle), the run that scored 0.94
+notebooks/er_pipeline_v3_2.ipynb   final pipeline (Colab or Kaggle), the run that scored 0.96
 src/er_pipeline_v3_2.py            plain-Python export of the notebook for reading on GitHub
 models/matcher_lgb.txt             trained LightGBM matcher (55 features; see models/README.md)
 results/                           results_v3_2.json (full run log) + CSV tables used above

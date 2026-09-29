@@ -1,6 +1,6 @@
 # Trained matcher: `matcher_lgb.txt`
 
-This is the LightGBM binary classifier from the v3.2 run (public leaderboard 0.94). It is a text model file that `lightgbm.Booster` can load directly.
+This is the LightGBM binary classifier from the v3.2 run (public leaderboard 0.96). It is a text model file that `lightgbm.Booster` can load directly.
 
 - **Trees:** 1,000.
 - **Parameters:** 127 leaves, learning rate 0.08, `min_data_in_leaf` 200, feature and bagging fraction 0.8, L2 regularisation 1.0, seed 42.
